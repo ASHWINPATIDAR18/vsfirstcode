@@ -9,13 +9,11 @@ sc=0
 hs=0
 bodies=[]
 
-#creating a screen
 s=turtle.Screen()
 s.title("Snake Game")
 s.bgcolor("light blue")
 s.setup(width=600,height=600)
 
-#creating a head
 head=turtle.Turtle()
 head.speed(0)
 head.shape("square")
@@ -25,7 +23,6 @@ head.penup()
 head.goto(0,0)
 head.direction="stop"
 
-#creating a food for snake
 food=turtle.Turtle()
 food.speed(0)
 food.shape("circle")
@@ -36,7 +33,6 @@ food.ht()
 food.goto(150,200)
 food.st()
 
-#creating a score board
 sb=turtle.Turtle()
 sb.penup()
 sb.ht()
@@ -45,7 +41,6 @@ sb.st()
 
 sb.write("Score:0   |   Highest Score:0")
 
-#creating function for moving in all directionsef moveUp():
 def moveUp():
     if head.direction!="down":
         head.direction="up"
@@ -74,7 +69,6 @@ def move():
     if head.direction=="right":
         x=head.xcor()
         head.setx(x+20)
-
 
 s.listen()
 s.onkey(moveUp,"Up")
